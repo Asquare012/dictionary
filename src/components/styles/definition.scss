@@ -1,0 +1,110 @@
+.Define {
+    height: auto;
+    padding: 0 4%;
+    font-family: Mulish, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .Loader {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Top {
+        height: 250px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        div {
+            width: 100%;
+        }
+
+        .Top-Nav {
+            height: 40%;
+            display: flex;
+            align-items: center;
+
+            span img {
+                cursor: pointer;
+                transition: transform ease-in-out 0.3s;
+
+                &:hover,
+                &:active {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .Top-Info {
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            background-color: #15194b;
+            background: linear-gradient(130deg, #23285c 30%, #15194b 80%);
+            color: #ffffff;
+            border-radius: 10px;
+
+            .Info-Word {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .Info-Sound {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 70px;
+                border-radius: 15px;
+                background-color: #DC687C;
+                background: linear-gradient(138.72deg, #DC8295 0%, #DC687C 95.83%);
+                cursor: pointer;
+                transition: transform ease-in-out 0.3s;
+
+                &:hover,
+                &:active {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .Bottom {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .Definition-container {
+            .Box {
+                width: 92vw;
+                margin-bottom: 15px;
+                border-radius: 10px;
+                height: auto;
+                background-color: #ffffff;
+                padding: 10px 5px 10px 8%;
+                font-size: 18px;
+
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    display: block;
+                    margin-top: 10px;
+                }
+
+                li {
+                    margin-bottom: 15px;
+                    color: #616163;
+                }
+            }
+        }
+    }
+}

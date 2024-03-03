@@ -1,0 +1,74 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home {
+    background-color: #F1F3F4;
+    height: 100%;
+    @include flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #14194C;
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: 0.7px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 18px;
+        color: #636363;
+
+    }
+
+    form {
+        height: 50px;
+        width: 80%;
+
+        input {
+            height: 100%;
+            width: 100%;
+            background: url(../Search.png);
+            background-repeat: no-repeat;
+            background-position: left 5% center;
+            padding-left: 15%;
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 17px;
+            color: #6d6d6d;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 1px 1px 3px #4c4e57;
+            transition: background-color ease-in-out 0.5s;
+
+            &:hover {
+                background-color: #f7f7f7;
+            }
+
+            &:active {
+                background-color: #ffffff;
+            }
+
+            &::placeholder {
+                font-size: 17px;
+                color: #cac8c8;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .Home {
+        form {
+            input {
+                padding-left: 20%;
+            }
+        }
+    }
+}

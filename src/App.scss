@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Mulish, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #F1F3F4;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  @include flex;
+  background-color: #F1F3F4;
+
+  .App-container {
+    width: 40%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+
+@media screen and (max-width:1000px) {
+  .App {
+    .App-container {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width:700px) {
+  .App {
+    .App-container {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  .App {
+    .App-container {
+      width: 100%;
+    }
+  }
+}
