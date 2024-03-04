@@ -11,15 +11,14 @@ const Definition = () => {
   // const [exist, setExist] = useState(true);
   // const [loading, setLoading] = useState(true);
 
+  // if (!resp.ok) {
+  //   setExist(false);
+  // }
+  // return;
+
   const getDef = () => {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-      .then((resp) => {
-        // if (!resp.ok) {
-        //   setExist(false);
-        // }
-        // return;
-        resp.json();
-      })
+      .then((resp) => resp.json())
       .then((def) => {
         setDefinition(def);
         // setLoading(false);
