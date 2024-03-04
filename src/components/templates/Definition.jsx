@@ -8,16 +8,17 @@ import play from "../assets/play.webp";
 const Definition = () => {
   const { word } = useParams();
   const [definition, setDefinition] = useState([]);
-  const [exist, setExist] = useState(true);
+  // const [exist, setExist] = useState(true);
   // const [loading, setLoading] = useState(true);
 
   const getDef = () => {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then((resp) => {
-        if (!resp.ok) {
-          setExist(false);
-        }
-        return resp.json();
+        // if (!resp.ok) {
+        //   setExist(false);
+        // }
+        // return;
+        resp.json();
       })
       .then((def) => {
         setDefinition(def);
@@ -27,39 +28,39 @@ const Definition = () => {
 
   useEffect(() => getDef, []);
 
-  if (!exist)
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-          flexDirection: "column",
-          height: "100vh",
-          textAlign: "center",
-          fontSize: "20px",
-        }}
-      >
-        <h3>WORD NOT FOUND</h3>
-        <NavLink to={"/"}>
-          <button
-            style={{
-              width: "37%",
-              height: "37px",
-              alignSelf: "center",
-              marginTop: "20px",
-              backgroundColor: "#15194b",
-              color: "#ffffff",
-              fontSize: "15px",
-              border: "none",
-              outline: "none",
-            }}
-          >
-            GO HOME
-          </button>
-        </NavLink>
-      </div>
-    );
+  // if (!exist)
+  //   return (
+  //     <div
+  //       style={{
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignContent: "center",
+  //         flexDirection: "column",
+  //         height: "100vh",
+  //         textAlign: "center",
+  //         fontSize: "20px",
+  //       }}
+  //     >
+  //       <h3>WORD NOT FOUND</h3>
+  //       <NavLink to={"/"}>
+  //         <button
+  //           style={{
+  //             width: "37%",
+  //             height: "37px",
+  //             alignSelf: "center",
+  //             marginTop: "20px",
+  //             backgroundColor: "#15194b",
+  //             color: "#ffffff",
+  //             fontSize: "15px",
+  //             border: "none",
+  //             outline: "none",
+  //           }}
+  //         >
+  //           GO HOME
+  //         </button>
+  //       </NavLink>
+  //     </div>
+  //   );
 
   return (
     <div className="Define">
