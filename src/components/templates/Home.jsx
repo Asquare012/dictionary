@@ -9,18 +9,19 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    !word ? null : navigate(`/definition/${word}`);
+    navigate(`/definition/${word}`);
   };
 
   return (
     <div className="Home">
-      <img src={hero_icon} alt="hero_icon" height="220px" width="250px" />
+      <img src={hero_icon} alt="hero_icon" height="220px" width="220px" />
       <h1>Dictionary</h1>
       <h3>Meaning of words at your fingertip</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           autoFocus
+          name="text"
           placeholder="Enter word"
           onChange={(e) =>
             setWord(
