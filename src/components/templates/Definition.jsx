@@ -9,19 +9,19 @@ const Definition = () => {
   const { word } = useParams();
   const [definition, setDefinition] = useState([]);
   const [exist, setExist] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const getDef = () => {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then((resp) => {
         if (!resp.ok) {
+          setLoading(true);
           setExist(false);
         }
         return resp.json();
       })
       .then((def) => {
         setDefinition(def);
-        setLoading(false);
       });
   };
 
